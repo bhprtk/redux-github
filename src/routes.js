@@ -10,4 +10,4 @@ export default (
 		<IndexRoute component={SearchPage} />
 		<Route path="profiles" component={ResultsPage} />
 	</Route>
-)
+);
