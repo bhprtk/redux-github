@@ -2,6 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as userActions from '../../actions/userActions';
+import SearchBar from './SearchBar';
 
 class SearchPage extends Component {
 	constructor(props, context) {
@@ -29,22 +30,10 @@ class SearchPage extends Component {
 	render() {
 		// console.log('this.props.userData', this.props.userData);
 		return (
-			<div className="jumbotron">
-				<h1>Github User Search</h1>
-
-				<input
-					className="form-control"
-					type="text"
-					onChange={this.onUsernameChange}
-					placeholder="Enter Username"
-					value={this.state.user}
-					/>
-				<button
-					className="btn btn-default"
-					onClick={this.searchUser}>
-					Search
-				</button>
-			</div>
+			<SearchBar
+				onUsernameChange={this.onUsernameChange}
+				searchUser={this.searchUser}
+				user={this.state.user} />
 		);
 	}
 }
@@ -55,7 +44,6 @@ SearchPage.propTypes = {
 };
 
 function mapStateToProps(state, ownProps) {
-	console.log('state in mapStateToProps', state);
 	return {
 		userData: state.userData
 	};
