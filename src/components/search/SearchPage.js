@@ -27,7 +27,7 @@ class SearchPage extends Component {
 	}
 
 	render() {
-		console.log('this.props.userData', this.props.userData);
+		// console.log('this.props.userData', this.props.userData);
 		return (
 			<div className="jumbotron">
 				<h1>Github User Search</h1>
@@ -51,10 +51,11 @@ class SearchPage extends Component {
 
 SearchPage.propTypes = {
 	actions: PropTypes.object.isRequired,
-	data: PropTypes.object.isRequired
+	userData: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
+	console.log('state in mapStateToProps', state);
 	return {
 		userData: state.userData
 	};

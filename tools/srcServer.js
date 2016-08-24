@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import path from 'path';
 import config from '../webpack.config.dev';
 import open from 'open';
+import colors from 'colors';
 
 /* eslint-disable no-console */
 
@@ -25,6 +26,7 @@ app.listen(PORT, function(err) {
   if (err) {
     console.log(err);
   } else {
-    open(`http://localhost:${PORT}`);
+    // open(`http://localhost:${PORT}`);
+    console.log(`Server listening on port ${PORT}`.magenta);
   }
 });
