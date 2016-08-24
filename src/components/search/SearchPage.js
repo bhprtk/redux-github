@@ -15,16 +15,19 @@ class SearchPage extends Component {
 		this.onUsernameChange = this.onUsernameChange.bind(this);
 	}
 
+
+
 	onUsernameChange(event) {
 		const user = event.target.value;
 		this.setState({user});
 	}
 
 	searchUser() {
-		this.props.actions.searchUser(this.state.user);
+		this.props.actions.loadUserData(this.state.user);
 	}
 
 	render() {
+		console.log('this.props.userData', this.props.userData);
 		return (
 			<div className="jumbotron">
 				<h1>Github User Search</h1>
@@ -47,12 +50,13 @@ class SearchPage extends Component {
 }
 
 SearchPage.propTypes = {
-	actions: PropTypes.object.isRequired
+	actions: PropTypes.object.isRequired,
+	data: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
 	return {
-		users: state.users
+		userData: state.userData
 	};
 }
 

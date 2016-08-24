@@ -1,1 +1,1 @@
-export const SEARCH_USER = 'SEARCH_USER';
+export const LOAD_USER_DATA_SUCCESS = 'LOAD_USER_DATA_SUCCESS';
