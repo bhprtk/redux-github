@@ -23,7 +23,8 @@ class SearchPage extends Component {
 		this.setState({user});
 	}
 
-	searchUser() {
+	searchUser(event) {
+		event.preventDefault();
 		this.props.actions.loadUserData(this.state.user);
 	}
 
